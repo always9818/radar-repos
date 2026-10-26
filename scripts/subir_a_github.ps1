@@ -30,9 +30,13 @@ function Paso($texto) { Write-Output "`n==> $texto" }
 function Fallar($texto) { Write-Output "ERROR: $texto"; exit 1 }
 
 Paso "1/7 Verificando herramientas"
-foreach ($cmd in "gh", "git", "bash", "uv") {
+foreach ($cmd in "gh", "git", "uv") {
     if (-not (Get-Command $cmd -ErrorAction SilentlyContinue)) { Fallar "No se encontro '$cmd'." }
 }
+# El bash de Git para Windows, no el de WSL (C:\Windows\System32\bash.exe), que sin distribucion instalada falla.
+$gitDir = Split-Path -Parent (Split-Path -Parent (Get-Command git).Source)
+$bash = Join-Path $gitDir "bin\bash.exe"
+if (-not (Test-Path $bash)) { Fallar "No se encontro el bash de Git en $bash" }
 gh auth status 2>$null | Out-Null
 if ($LASTEXITCODE -ne 0) { Fallar "No has iniciado sesion en GitHub. Corre: gh auth login" }
 $usuario = gh api user --jq .login
@@ -71,7 +75,7 @@ if (-not $remoto) {
 }
 
 Paso "5/7 Subiendo la base actual a la rama datos"
-bash scripts/ci_datos.sh subir
+& $bash scripts/ci_datos.sh subir
 if ($LASTEXITCODE -ne 0) { Fallar "No se pudo subir la base." }
 
 Paso "6/7 Activando GitHub Pages y lanzando la primera corrida"
