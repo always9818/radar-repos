@@ -1,0 +1,10 @@
+# Recolector de Hacker News (fase 4). API pública de Algolia: https://hn.algolia.com/api
+# No necesita clave ni cuenta.
+
+dias = 7                      # ventana hacia atrás en cada corrida
+puntos_min = 10               # historias con link directo a GitHub
+puntos_min_show_hn = 5        # "Show HN" con el link de GitHub en el texto
+max_paginas = 5               # páginas de 100 historias por búsqueda
+minimo_historias = 5          # si llegan menos, algo anda mal con la API (loop de verificación)
+max_resolver = 200            # repos nuevos que se confirman en la API de GitHub por corrida (con token)
+max_resolver_sin_token = 20   # sin token solo hay 60 peticiones/hora

@@ -1,0 +1,54 @@
+# Consultas del recolector de ranking (fase 1).
+# Sintaxis de búsqueda de GitHub: https://docs.github.com/search-github/searching-on-github/searching-for-repositories
+# Marcadores de fecha disponibles: {hace_7d}, {hace_30d}, {hace_90d}  (se reemplazan por YYYY-MM-DD)
+#
+# minimo:  cuántos repos debe devolver la consulta para considerarla sana (loop de verificación).
+# paginas: páginas de 100 resultados (máx. 10). Cada página es 1 petición a la Search API (30/min).
+
+[general]
+excluir_forks = true
+excluir_archivados = true
+muestra_urls = 3          # cuántas URLs al azar se verifican contra la API en cada consulta
+
+[[consulta]]
+nombre = "top_global"
+q = "stars:>20000"
+paginas = 3
+minimo = 250
+
+[[consulta]]
+nombre = "top_python"
+q = "language:python stars:>5000"
+paginas = 1
+minimo = 80
+
+[[consulta]]
+nombre = "top_typescript"
+q = "language:typescript stars:>5000"
+paginas = 1
+minimo = 80
+
+[[consulta]]
+nombre = "top_ia_llm"
+q = "topic:llm stars:>1000"
+paginas = 2
+minimo = 100
+
+[[consulta]]
+nombre = "top_agentes"
+q = "topic:ai-agents stars:>500"
+paginas = 1
+minimo = 50
+
+# Repos jóvenes con muchas estrellas: candidatos a tendencia antes de tener historial propio.
+[[consulta]]
+nombre = "nuevos_30d"
+q = "created:>{hace_30d} stars:>300"
+paginas = 1
+minimo = 20
+
+[[consulta]]
+nombre = "nuevos_7d"
+q = "created:>{hace_7d} stars:>100"
+paginas = 1
+minimo = 10

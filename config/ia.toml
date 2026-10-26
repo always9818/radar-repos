@@ -1,0 +1,13 @@
+# Fase 3: enriquecimiento con IA (categoría, descripción de uso y 2 ejemplos reales, en español).
+# Solo corre si existe ANTHROPIC_API_KEY. El modelo se elige con ANTHROPIC_MODEL en .env.
+
+esfuerzo = "low"               # tarea de clasificación/redacción corta: low basta (low | medium | high)
+max_repos = 150                # repos enriquecidos por corrida como máximo
+max_costo_usd = 2.00           # tope de gasto estimado por corrida; al pasarlo se detiene y sigue mañana
+max_caracteres_readme = 6000   # parte del README que se manda (lo demás rara vez cambia la categoría)
+
+# Precio por millón de tokens (entrada, salida) para estimar el gasto. Fuente: tabla de precios de Anthropic.
+[precios]
+"claude-opus-5-5" = [4.00, 20.00]
+"claude-sonnet-5-5" = [2.00, 10.00]
+"claude-haiku-5-5" = [0.10, 0.50]

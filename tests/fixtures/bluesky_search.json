@@ -1,0 +1,562 @@
+{
+ "posts": [
+  {
+   "uri": "at://did:plc:uorsid6pyxlcoggl3b65mzfy/app.bsky.feed.post/3mydfpkdhbc2i",
+   "cid": "bafyreiewzp25b7f5e4pcam56j2j7k2eevf7dad33hhzbo6olilipxtsxre",
+   "author": {
+    "did": "did:plc:uorsid6pyxlcoggl3b65mzfy",
+    "handle": "joseli.to",
+    "displayName": "Joselito",
+    "pronouns": "ele/dele",
+    "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:uorsid6pyxlcoggl3b65mzfy/bafkreid6ctsmims3b7pu4r5sad7gjfa4ttxt2cnzcg6n7yto4suxfc4tiu",
+    "associated": {
+     "chat": {
+      "allowIncoming": "all"
+     },
+     "activitySubscription": {
+      "allowSubscriptions": "none"
+     }
+    },
+    "labels": [
+     {
+      "src": "did:plc:uorsid6pyxlcoggl3b65mzfy",
+      "uri": "at://did:plc:uorsid6pyxlcoggl3b65mzfy/app.bsky.actor.profile/self",
+      "cid": "bafyreidbxv6wqi7l55rglzrutiqq3w2cr47qwffqctan6aq4l4ug77xs2y",
+      "val": "!no-unauthenticated",
+      "cts": "1970-01-01T00:00:00.000Z"
+     }
+    ],
+    "createdAt": "2023-04-26T12:36:06.464Z"
+   },
+   "record": {
+    "$type": "app.bsky.feed.post",
+    "createdAt": "2026-10-20T19:48:43.806Z",
+    "facets": [
+     {
+      "features": [
+       {
+        "$type": "app.bsky.richtext.facet#link",
+        "uri": "https://github.com/breakzplatform/rota-da-democracia"
+       }
+      ],
+      "index": {
+       "byteEnd": 60,
+       "byteStart": 34
+      }
+     }
+    ],
+    "langs": [
+     "en"
+    ],
+    "reply": {
+     "parent": {
+      "cid": "bafyreifbauydimz2xyythia7s6kvgnda6oeemll453forgpphwsrldte5m",
+      "uri": "at://did:plc:uorsid6pyxlcoggl3b65mzfy/app.bsky.feed.post/3mydfhaaze22i"
+     },
+     "root": {
+      "cid": "bafyreifbgbk76yiqr2d76ui5ra2p5k456qwr27vdk3rlzvnswfn5lik2va",
+      "uri": "at://did:plc:uorsid6pyxlcoggl3b65mzfy/app.bsky.feed.post/3mydfh6ukis2i"
+     }
+    },
+    "text": "e como de costume, código aberto github.com/breakzplatfo..."
+   },
+   "bookmarkCount": 1,
+   "replyCount": 1,
+   "repostCount": 6,
+   "likeCount": 42,
+   "quoteCount": 0,
+   "indexedAt": "2026-10-20T19:48:44.452Z",
+   "labels": []
+  },
+  {
+   "uri": "at://did:plc:nbfjoeficjzf3pejpontvril/app.bsky.feed.post/3myfcamqhds2c",
+   "cid": "bafyreihwja3zopzzebm6tlk4sztudus3mr6gsvw6cmsgbu5m7ckkgjkawy",
+   "author": {
+    "did": "did:plc:nbfjoeficjzf3pejpontvril",
+    "handle": "astrra.space",
+    "displayName": "Astra ⎔",
+    "pronouns": "she/they/it",
+    "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:nbfjoeficjzf3pejpontvril/bafkreig7khr3u4saslspgqpxnciyfkgvjd2wn7x333njoy4vnihtzb6udi",
+    "associated": {
+     "chat": {
+      "allowIncoming": "following",
+      "allowGroupInvites": "following"
+     },
+     "activitySubscription": {
+      "allowSubscriptions": "mutuals"
+     }
+    },
+    "labels": [
+     {
+      "src": "did:plc:nbfjoeficjzf3pejpontvril",
+      "uri": "at://did:plc:nbfjoeficjzf3pejpontvril/app.bsky.actor.profile/self",
+      "cid": "bafyreie4vvt5rf5pywifccqtnmbp2myzb4ran4jb5sn5pukvxp37yhmvgm",
+      "val": "bot",
+      "cts": "2025-05-14T04:45:40.935Z"
+     }
+    ],
+    "createdAt": "2024-10-29T01:24:12.210Z",
+    "status": {
+     "uri": "at://did:plc:nbfjoeficjzf3pejpontvril/app.bsky.actor.status/self",
+     "cid": "bafyreiaukbzk3ywajj2f7dv6f6flf54oa4op2gh4lpcr2rwaffjpwlzfpu",
+     "record": {
+      "$type": "app.bsky.actor.status",
+      "createdAt": "2026-01-17T06:05:19.502Z",
+      "durationMinutes": 5,
+      "embed": {
+       "$type": "app.bsky.embed.external",
+       "external": {
+        "$type": "app.bsky.embed.external#external",
+        "description": "Twitch is the world",
+        "thumb": {
+         "$type": "blob",
+         "ref": {
+          "$link": "bafkreihl6jp2sisun4aub7ducninn5ek2uk6jzmxaphk2i4b6d24gaq3na"
+         },
+         "mimeType": "image/jpeg",
+         "size": 214590
+        },
+        "title": "Twitch",
+        "uri": "https://twitch.tv/prime"
+       }
+      },
+      "status": "app.bsky.actor.status#live"
+     },
+     "status": "app.bsky.actor.status#live",
+     "embed": {
+      "external": {
+       "uri": "https://twitch.tv/prime",
+       "title": "Twitch",
+       "description": "Twitch is the world",
+       "thumb": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:nbfjoeficjzf3pejpontvril/bafkreihl6jp2sisun4aub7ducninn5ek2uk6jzmxaphk2i4b6d24gaq3na"
+      },
+      "$type": "app.bsky.embed.external#view"
+     },
+     "labels": [],
+     "expiresAt": "2026-01-17T06:10:19.502Z",
+     "isActive": false
+    }
+   },
+   "record": {
+    "$type": "app.bsky.feed.post",
+    "createdAt": "2026-10-21T13:52:01.267Z",
+    "embed": {
+     "$type": "app.bsky.embed.external",
+     "external": {
+      "description": "## Summary\n\nPHP uses `longjmp()` for out-of-memory (OOM) errors to exit the current context and abort handling of the request. In some contexts, request memory is temporarily reachable before it ...",
+      "thumb": {
+       "$type": "blob",
+       "ref": {
+        "$link": "bafkreifveebadjgnkl2a6gagyq7pfdf33qxmiquujjay6zclmlgrxwfqw4"
+       },
+       "mimeType": "image/jpeg",
+       "size": 120231
+      },
+      "title": "RCE via OOM corruption",
+      "uri": "https://github.com/php/php-src/security/advisories/GHSA-w8hw-w9fx-j79w"
+     }
+    },
+    "facets": [
+     {
+      "features": [
+       {
+        "$type": "app.bsky.richtext.facet#link",
+        "uri": "https://github.com/php/php-src/security/advisories/GHSA-w8hw-w9fx-j79w"
+       }
+      ],
+      "index": {
+       "byteEnd": 44,
+       "byteStart": 18
+      }
+     },
+     {
+      "features": [
+       {
+        "$type": "app.bsky.richtext.facet#link",
+        "uri": "https://github.com/php/php-src/security/advisories/GHSA-6wmf-4rv5-p3rp"
+       }
+      ],
+      "index": {
+       "byteEnd": 72,
+       "byteStart": 46
+      }
+     }
+    ],
+    "langs": [
+     "en"
+    ],
+    "text": "merry christmas!\n\ngithub.com/php/php-src/...\n\ngithub.com/php/php-src/..."
+   },
+   "embed": {
+    "external": {
+     "uri": "https://github.com/php/php-src/security/advisories/GHSA-w8hw-w9fx-j79w",
+     "title": "RCE via OOM corruption",
+     "description": "## Summary\n\nPHP uses `longjmp()` for out-of-memory (OOM) errors to exit the current context and abort handling of the request. In some contexts, request memory is temporarily reachable before it ...",
+     "thumb": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:nbfjoeficjzf3pejpontvril/bafkreifveebadjgnkl2a6gagyq7pfdf33qxmiquujjay6zclmlgrxwfqw4"
+    },
+    "$type": "app.bsky.embed.external#view"
+   },
+   "bookmarkCount": 6,
+   "replyCount": 2,
+   "repostCount": 21,
+   "likeCount": 103,
+   "quoteCount": 3,
+   "indexedAt": "2026-10-21T13:52:02.035Z",
+   "labels": []
+  },
+  {
+   "uri": "at://did:plc:oo5i5kjtszxrpt3fina3s5yg/app.bsky.feed.post/3myewd6ncgc2u",
+   "cid": "bafyreieoih5eme643fcurjyc7ad3mxatcu2fsjjuosaxtta2jdletcsz6i",
+   "author": {
+    "did": "did:plc:oo5i5kjtszxrpt3fina3s5yg",
+    "handle": "masterjp.bsky.social",
+    "displayName": "マスター／MasterJP",
+    "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:oo5i5kjtszxrpt3fina3s5yg/bafkreiaa464varmevrqapour73ilvpc5iyoislsqsnagfrcvfcep7b5cni",
+    "associated": {
+     "chat": {
+      "allowIncoming": "none"
+     },
+     "activitySubscription": {
+      "allowSubscriptions": "followers"
+     }
+    },
+    "labels": [],
+    "createdAt": "2024-02-07T12:22:59.308Z"
+   },
+   "record": {
+    "$type": "app.bsky.feed.post",
+    "createdAt": "2026-10-21T10:18:42.245Z",
+    "facets": [
+     {
+      "features": [
+       {
+        "$type": "app.bsky.richtext.facet#link",
+        "uri": "https://github.com/MemberJunction/MJ/pull/5258"
+       }
+      ],
+      "index": {
+       "byteEnd": 84,
+       "byteStart": 58
+      }
+     },
+     {
+      "features": [
+       {
+        "$type": "app.bsky.richtext.facet#link",
+        "uri": "https://github.com/MemberJunction/MJ/pull/5258#pullrequestreview-5466937795"
+       }
+      ],
+      "index": {
+       "byteEnd": 132,
+       "byteStart": 106
+      }
+     },
+     {
+      "features": [
+       {
+        "$type": "app.bsky.richtext.facet#link",
+        "uri": "https://github.com/MemberJunction/MJ/pull/5258#issuecomment-6084898393"
+       }
+      ],
+      "index": {
+       "byteEnd": 207,
+       "byteStart": 181
+      }
+     }
+    ],
+    "langs": [
+     "ja"
+    ],
+    "reply": {
+     "parent": {
+      "cid": "bafyreiabuklabxqjlhfuqddkfunfrehyn6byqoqgw6vsljnyenkqlakivm",
+      "uri": "at://did:plc:oo5i5kjtszxrpt3fina3s5yg/app.bsky.feed.post/3myewcggel22u"
+     },
+     "root": {
+      "cid": "bafyreig7ledja5esenv4qruo4oazy2mc7s4n5rdark3dlglyfeozl4l6uu",
+      "uri": "at://did:plc:oo5i5kjtszxrpt3fina3s5yg/app.bsky.feed.post/3myew63wuxc2u"
+     }
+    },
+    "text": "【GitHub一次資料】\n\n■ 修正・マージ PR #5258\ngithub.com/MemberJuncti...\n\n■ 私の原指摘\ngithub.com/MemberJuncti...\n\n■ 開発者による採用・修正・検証\ngithub.com/MemberJuncti..."
+   },
+   "bookmarkCount": 0,
+   "replyCount": 0,
+   "repostCount": 0,
+   "likeCount": 8,
+   "quoteCount": 0,
+   "indexedAt": "2026-10-21T10:18:42.936Z",
+   "labels": []
+  },
+  {
+   "uri": "at://did:plc:oo5i5kjtszxrpt3fina3s5yg/app.bsky.feed.post/3myhd3e2pb223",
+   "cid": "bafyreiafnhfmu3wcp3e4pwaabvq3ytslj6lnyaqmh4sdb7sggss6mjziju",
+   "author": {
+    "did": "did:plc:oo5i5kjtszxrpt3fina3s5yg",
+    "handle": "masterjp.bsky.social",
+    "displayName": "マスター／MasterJP",
+    "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:oo5i5kjtszxrpt3fina3s5yg/bafkreiaa464varmevrqapour73ilvpc5iyoislsqsnagfrcvfcep7b5cni",
+    "associated": {
+     "chat": {
+      "allowIncoming": "none"
+     },
+     "activitySubscription": {
+      "allowSubscriptions": "followers"
+     }
+    },
+    "labels": [],
+    "createdAt": "2024-02-07T12:22:59.308Z"
+   },
+   "record": {
+    "$type": "app.bsky.feed.post",
+    "createdAt": "2026-10-22T09:12:17.612Z",
+    "facets": [
+     {
+      "features": [
+       {
+        "$type": "app.bsky.richtext.facet#link",
+        "uri": "https://www.iwaicosmo.net/info/post_499.html"
+       }
+      ],
+      "index": {
+       "byteEnd": 111,
+       "byteStart": 78
+      }
+     },
+     {
+      "features": [
+       {
+        "$type": "app.bsky.richtext.facet#link",
+        "uri": "https://github.com/MemberJunction/MJ/pull/5368"
+       }
+      ],
+      "index": {
+       "byteEnd": 186,
+       "byteStart": 160
+      }
+     },
+     {
+      "features": [
+       {
+        "$type": "app.bsky.richtext.facet#link",
+        "uri": "https://github.com/MemberJunction/MJ/pull/5368#issuecomment-6111171870"
+       }
+      ],
+      "index": {
+       "byteEnd": 246,
+       "byteStart": 220
+      }
+     },
+     {
+      "features": [
+       {
+        "$type": "app.bsky.richtext.facet#link",
+        "uri": "https://github.com/MemberJunction/MJ/pull/5368#issuecomment-6136450986"
+       }
+      ],
+      "index": {
+       "byteEnd": 318,
+       "byteStart": 292
+      }
+     }
+    ],
+    "langs": [
+     "ja"
+    ],
+    "reply": {
+     "parent": {
+      "cid": "bafyreihidp2sjjmxypppaweth62hlkdbzd5oa7q5rmycimghzeyjbx24xa",
+      "uri": "at://did:plc:oo5i5kjtszxrpt3fina3s5yg/app.bsky.feed.post/3myhd2lx4tc23"
+     },
+     "root": {
+      "cid": "bafyreicmelg34asbviwyp34xamjzpd3iyjf477wt3ua4agh6ge3xk2crsu",
+      "uri": "at://did:plc:oo5i5kjtszxrpt3fina3s5yg/app.bsky.feed.post/3myhcq6tw4223"
+     }
+    },
+    "text": "【一次資料】\n\n■ 岩井コスモ証券・2026年10月21日公式発表\nwww.iwaicosmo.net/info/post_49...\n\n■ MemberJunction 修正・マージ PR #5368\ngithub.com/MemberJuncti...\n\n■ 私の指摘と再現条件\ngithub.com/MemberJuncti...\n\n■ 開発者による修正・検証結果\ngithub.com/MemberJuncti..."
+   },
+   "bookmarkCount": 0,
+   "replyCount": 0,
+   "repostCount": 2,
+   "likeCount": 12,
+   "quoteCount": 0,
+   "indexedAt": "2026-10-22T09:12:18.437Z",
+   "labels": []
+  },
+  {
+   "uri": "at://did:plc:5wm25vgenhgut3iqfjf4ozj5/app.bsky.feed.post/3mygicqghk22k",
+   "cid": "bafyreigdzgxi3hkmlhklziv3rblvvdnjidptey6dyhwwpktkct62o53vwi",
+   "author": {
+    "did": "did:plc:5wm25vgenhgut3iqfjf4ozj5",
+    "handle": "eugenevinitsky.bsky.social",
+    "displayName": "Eugene Vinitsky 🍒",
+    "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:5wm25vgenhgut3iqfjf4ozj5/bafkreiaiqltnxwgu5jdoihiyy7zcqgxhu2wlw46jtxtoy6jmhvfbre3fty",
+    "associated": {
+     "chat": {
+      "allowIncoming": "all"
+     },
+     "activitySubscription": {
+      "allowSubscriptions": "followers"
+     }
+    },
+    "labels": [],
+    "createdAt": "2023-05-22T20:47:10.597Z"
+   },
+   "record": {
+    "$type": "app.bsky.feed.post",
+    "createdAt": "2026-10-22T01:13:14.432Z",
+    "embed": {
+     "$type": "app.bsky.embed.images",
+     "images": [
+      {
+       "alt": "",
+       "aspectRatio": {
+        "height": 1182,
+        "width": 680
+       },
+       "image": {
+        "$type": "blob",
+        "ref": {
+         "$link": "bafkreihzh5dsxeqx36jvovk54dvyghmy4vccgyumaoa7wkgwlqxk774unm"
+        },
+        "mimeType": "image/jpeg",
+        "size": 219232
+       }
+      }
+     ]
+    },
+    "facets": [
+     {
+      "features": [
+       {
+        "$type": "app.bsky.richtext.facet#link",
+        "uri": "https://github.com/eugenevinitsky/InternetDeathClock"
+       }
+      ],
+      "index": {
+       "byteEnd": 99,
+       "byteStart": 73
+      }
+     }
+    ],
+    "langs": [
+     "en"
+    ],
+    "text": "Silly little app I made that I find useful and you might find useful too\ngithub.com/eugenevinits..."
+   },
+   "embed": {
+    "images": [
+     {
+      "thumb": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:5wm25vgenhgut3iqfjf4ozj5/bafkreihzh5dsxeqx36jvovk54dvyghmy4vccgyumaoa7wkgwlqxk774unm",
+      "fullsize": "https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:5wm25vgenhgut3iqfjf4ozj5/bafkreihzh5dsxeqx36jvovk54dvyghmy4vccgyumaoa7wkgwlqxk774unm",
+      "alt": "",
+      "aspectRatio": {
+       "height": 1182,
+       "width": 680
+      }
+     }
+    ],
+    "$type": "app.bsky.embed.images#view"
+   },
+   "bookmarkCount": 7,
+   "replyCount": 4,
+   "repostCount": 4,
+   "likeCount": 39,
+   "quoteCount": 1,
+   "indexedAt": "2026-10-22T01:13:15.840Z",
+   "labels": [],
+   "threadgate": {
+    "uri": "at://did:plc:5wm25vgenhgut3iqfjf4ozj5/app.bsky.feed.threadgate/3mygicqghk22k",
+    "cid": "bafyreielrtl4lq72zx5rxkhyqvfxeerbgvt7gqchvhcm7aw6kvv5o7slb4",
+    "record": {
+     "$type": "app.bsky.feed.threadgate",
+     "allow": [
+      {
+       "$type": "app.bsky.feed.threadgate#followerRule"
+      },
+      {
+       "$type": "app.bsky.feed.threadgate#followingRule"
+      },
+      {
+       "$type": "app.bsky.feed.threadgate#mentionRule"
+      }
+     ],
+     "createdAt": "2026-10-22T01:13:15.107Z",
+     "hiddenReplies": [],
+     "post": "at://did:plc:5wm25vgenhgut3iqfjf4ozj5/app.bsky.feed.post/3mygicqghk22k"
+    },
+    "lists": []
+   }
+  },
+  {
+   "uri": "at://did:plc:wbtsi5vt3gt2xr4siqnzaigq/app.bsky.feed.post/3myfij6onxc2n",
+   "cid": "bafyreiewiboejhcvkdwdqwey6bqbdbf6jpiep2rshqdqcl5otf4c56a5dm",
+   "author": {
+    "did": "did:plc:wbtsi5vt3gt2xr4siqnzaigq",
+    "handle": "haz.re",
+    "displayName": "haz",
+    "avatar": "https://cdn.bsky.app/img/avatar/plain/did:plc:wbtsi5vt3gt2xr4siqnzaigq/bafkreih23xrpwe4tqcpr3lr32pfkaknoqehaa63f6unmtgsjfjfu7tox5y",
+    "associated": {
+     "chat": {
+      "allowIncoming": "all"
+     },
+     "activitySubscription": {
+      "allowSubscriptions": "followers"
+     }
+    },
+    "labels": [],
+    "createdAt": "2023-07-01T18:52:26.125Z"
+   },
+   "record": {
+    "$type": "app.bsky.feed.post",
+    "createdAt": "2026-10-21T15:44:10.968Z",
+    "embed": {
+     "$type": "app.bsky.embed.images",
+     "images": [
+      {
+       "alt": "https://github.com/NixOS/nixpkgs/pull/576390/changes/16ac0cd8f4ebfa760f843348bb8c6d5037ea0333",
+       "aspectRatio": {
+        "height": 300,
+        "width": 751
+       },
+       "image": {
+        "$type": "blob",
+        "ref": {
+         "$link": "bafkreiacmpoumfhatcccf4x4cpekwlvvybac6jlq35ialq5vkb6miro4lu"
+        },
+        "mimeType": "image/png",
+        "size": 251944
+       }
+      }
+     ]
+    },
+    "langs": [
+     "en"
+    ],
+    "text": "It feels like a super power when you can just block CAs at OS level this easy",
+    "via": "Witchsky Web App"
+   },
+   "embed": {
+    "images": [
+     {
+      "thumb": "https://cdn.bsky.app/img/feed_thumbnail/plain/did:plc:wbtsi5vt3gt2xr4siqnzaigq/bafkreiacmpoumfhatcccf4x4cpekwlvvybac6jlq35ialq5vkb6miro4lu",
+      "fullsize": "https://cdn.bsky.app/img/feed_fullsize/plain/did:plc:wbtsi5vt3gt2xr4siqnzaigq/bafkreiacmpoumfhatcccf4x4cpekwlvvybac6jlq35ialq5vkb6miro4lu",
+      "alt": "https://github.com/NixOS/nixpkgs/pull/576390/changes/16ac0cd8f4ebfa760f843348bb8c6d5037ea0333",
+      "aspectRatio": {
+       "height": 300,
+       "width": 751
+      }
+     }
+    ],
+    "$type": "app.bsky.embed.images#view"
+   },
+   "bookmarkCount": 8,
+   "replyCount": 3,
+   "repostCount": 7,
+   "likeCount": 104,
+   "quoteCount": 3,
+   "indexedAt": "2026-10-21T15:44:12.136Z",
+   "labels": []
+  }
+ ],
+ "cursor": "c1"
+}

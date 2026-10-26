@@ -1,0 +1,13 @@
+.env
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+data/*.db
+data/*.db-*
+modelos/
+logs/
+data/diario.lock
+data/radar_prev.db
+data/radar_subir.db
+panel/data.js

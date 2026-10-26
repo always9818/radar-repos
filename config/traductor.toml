@@ -1,0 +1,50 @@
+# Traductor local (sin claves ni servicios externos): modelos de Argos Translate ejecutados con CTranslate2.
+# Índice de modelos: https://github.com/argosopentech/argospm-index
+#
+# Todo se traduce hacia español. Los idiomas sin modelo directo a español pasan por inglés (zh → en → es).
+# Para sumar un idioma, agrega su modelo "xx_en" aquí y corre: uv run radar-traducir --descargar
+
+directorio = "modelos"
+beam = 2                       # 2 = rápido; 4 = algo mejor y más lento (se usa al reintentar)
+max_caracteres = 600           # textos más largos se recortan (las descripciones de GitHub rara vez pasan de 350)
+
+# Nombres técnicos que deben quedar tal cual (se restaura su escritura si el modelo los cambia).
+glosario = [
+    "Python", "JavaScript", "TypeScript", "Node.js", "Rust", "Golang", "Linux", "macOS", "Windows", "Android",
+    "iOS", "React", "Vue", "Svelte", "Docker", "Kubernetes", "GitHub", "Claude Code", "Claude", "OpenAI",
+    "ChatGPT", "LLM", "LLMs", "API", "APIs", "SQL", "HTML", "CSS", "PHP", "Kotlin", "Swift", "WebAssembly",
+    "PostgreSQL", "Redis", "Nginx", "Bash", "Zsh", "CLI", "MCP", "Tailwind", "Next.js", "PyTorch", "GPU", "CPU",
+    "Visual Studio Code", "VS Code", "Stable Diffusion", "ComfyUI", "Grok", "Gemini", "DeepSeek", "Qwen", "Llama",
+    "Ollama", "Wayland", "Firefox", "Chromium", "Chrome", "uBlock Origin", "Bitcoin", "Markdown", "YouTube",
+    "WhatsApp", "Telegram", "Discord", "Slack", "Notion", "Obsidian", "n8n", "RAG", "WebUI", "UI",
+]
+
+# Traducciones literales que el modelo hace mal: "lo que sale" = "lo que debe decir".
+[correcciones]
+"Pitón" = "Python"
+"pitón" = "Python"
+"TipoScript" = "TypeScript"
+"tiposcript" = "TypeScript"
+"and" = "y"
+"el nodo" = "Node"
+"de grado empresarial" = "de nivel empresarial"
+"sin pintar" = "sin imposiciones"
+"motor de búsqueda reparador" = "motor de búsqueda RESTful"
+"A alternativa" = "Alternativa"
+"cuestionable" = "consultable"
+"devoto mayor" = "desarrollador sénior"
+"Código Claude" = "Claude Code"
+"código Claude" = "Claude Code"
+"Óxido" = "Rust"
+"Ir desarrolladores" = "desarrolladores de Go"
+"Fuente libre y abierta" = "Libre y de código abierto"
+"Fuente Abierta" = "código abierto"
+"fuente abierta" = "código abierto"
+"aprendizaje de máquina" = "aprendizaje automático"
+
+[modelos]
+en_es = "https://argos-net.com/v1/translate-en_es-1_0.argosmodel"
+zh_en = "https://argos-net.com/v1/translate-zh_en-1_9.argosmodel"
+# ja_en = "https://argos-net.com/v1/translate-ja_en-1_1.argosmodel"
+# ko_en = "https://argos-net.com/v1/translate-ko_en-1_1.argosmodel"
+# ru_en = "https://argos-net.com/v1/translate-ru_en-1_9.argosmodel"

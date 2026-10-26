@@ -1,0 +1,27 @@
+# Recolectores de Reddit y Bluesky (fase 4). Ninguno necesita clave.
+
+[reddit]
+# Feeds RSS públicos (la API JSON bloquea peticiones sin cuenta). El RSS no trae votos:
+# se usa el orden "top de la semana" y la posición como interacción aproximada.
+periodo = "week"                # hour, day, week, month
+pausa_segundos = 8              # Reddit limita fuerte sin cuenta: se espacia cada feed
+espera_429 = 45                 # segundos a esperar si responde 429 antes de reintentar
+cobertura_minima = 0.7          # % de feeds que deben leerse bien para dar la corrida por buena
+max_resolver = 100
+max_resolver_sin_token = 10
+busqueda = "url:github.com"     # búsqueda global además de los subreddits ("" para desactivar)
+subreddits = [
+    "opensource", "github", "coolgithubprojects", "selfhosted", "programming",
+    "LocalLLaMA", "MachineLearning", "Python", "javascript", "rust", "golang", "devops", "SideProject",
+]
+
+[bluesky]
+# API pública de búsqueda (api.bsky.app). Sin cuenta solo da la primera página (100 posts):
+# las páginas siguientes (cursor) responden 403. Por eso se hace una búsqueda por cada orden.
+consulta = "github.com"
+dias = 7
+ordenes = ["top", "latest"]     # top = más relevantes de la semana, latest = más recientes
+likes_min = 5                   # filtra bots y posts sin alcance
+minimo_posts = 20               # si llegan menos, algo anda mal con la API
+max_resolver = 100
+max_resolver_sin_token = 10

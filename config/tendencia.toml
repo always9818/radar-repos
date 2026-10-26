@@ -1,0 +1,32 @@
+# Umbrales del detector de tendencia (fase 2).
+#
+# delta_dia   = estrellas ganadas por día desde la foto anterior
+# base_diaria = promedio de estrellas por día en la semana previa
+# score       = delta_dia / max(base_diaria, piso_base)
+#
+# Un score de 3 significa "hoy ganó el triple de lo que venía ganando".
+
+piso_base = 5                 # evita scores enormes en repos que casi no crecían
+
+[explosivo]
+score_min = 3.0
+delta_min = 100               # además del score, al menos estas estrellas por día
+
+[en_alza]
+score_min = 1.5
+delta_min = 20
+delta_sin_historial = 100     # con solo 2 fotos no hay base: basta con ganar esto por día
+
+[nuevo_rapido]                # repos recién creados que suben rápido, sin necesitar historial
+edad_max_dias = 30
+estrellas_por_dia_min = 300   # con 50 salían ~190 repos el primer día; con 300, ~40
+
+[cobertura]
+dias_seguimiento = 7          # se siguen los repos vistos en los últimos N días
+minima = 0.9                  # % de repos seguidos que deben tener foto de hoy
+max_refrescos = 300           # repos sin foto de hoy que se consultan uno a uno (con token)
+max_refrescos_sin_token = 15  # sin token solo hay 60 peticiones/hora
+
+[trending]
+minimo_repos = 5              # si la página trae menos, su estructura probablemente cambió (suele traer 10-25)
+periodos = ["daily"]          # daily, weekly, monthly

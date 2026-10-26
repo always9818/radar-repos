@@ -1,0 +1,125 @@
+# Corrida diaria del radar en GitHub Actions (fase 6, nube).
+#
+# - Recupera la base de la rama `datos`, corre todo con `radar-diario`, guarda la base y publica el panel
+#   en GitHub Pages. Si algo falla, el job termina en rojo y GitHub te avisa por correo.
+# - No necesita secretos para funcionar: el GITHUB_TOKEN que da Actions sirve para la API de GitHub
+#   (1000 peticiones/hora). ANTHROPIC_API_KEY es opcional (fase 3).
+# - Variable opcional del repo RADAR_OMITIR (Settings → Secrets and variables → Variables): pasos a saltar,
+#   p. ej. "reddit" si Reddit bloquea los servidores de GitHub.
+
+name: Radar diario
+
+on:
+  schedule:
+    - cron: "0 14 * * *" # 14:00 UTC = 08:00 en Guatemala. GitHub puede demorar unos minutos en arrancar.
+  workflow_dispatch:
+    inputs:
+      forzar:
+        description: "Repetir aunque hoy ya haya una corrida completa"
+        type: boolean
+        default: false
+
+permissions:
+  contents: write # guardar la base en la rama datos
+  pages: write
+  id-token: write
+
+concurrency:
+  group: radar-diario
+  cancel-in-progress: false # nunca cortar una corrida a medias: podría dejar la base sin guardar
+
+jobs:
+  radar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    outputs:
+      panel: ${{ steps.panel.outputs.listo }}
+    env:
+      TZ: America/Guatemala # "hoy" del radar = día de Guatemala, igual que en la PC
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+      ANTHROPIC_MODEL: ${{ vars.ANTHROPIC_MODEL }} # vacío = claude-opus-5-5
+      RADAR_OMITIR: ${{ vars.RADAR_OMITIR }}
+      PYTHONUTF8: "1"
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - uses: astral-sh/setup-uv@v6
+        with:
+          enable-cache: true
+
+      - name: Instalar dependencias
+        run: uv sync --frozen
+
+      - name: Recuperar la base (rama datos)
+        id: bajar
+        run: bash scripts/ci_datos.sh bajar
+
+      - name: Caché de modelos de traducción
+        uses: actions/cache@v4
+        with:
+          path: modelos
+          key: modelos-${{ hashFiles('config/traductor.toml') }}
+
+      - name: Descargar modelos que falten
+        run: uv run radar-traducir --solo-descargar
+
+      - name: Corrida diaria
+        id: diario
+        continue-on-error: true
+        run: uv run radar-diario ${{ inputs.forzar && '--forzar' || '' }}
+
+      - name: Chequeo de salud
+        id: salud
+        continue-on-error: true
+        run: uv run radar-salud
+
+      - name: Guardar la base (rama datos)
+        if: always() && steps.bajar.outcome == 'success'
+        run: bash scripts/ci_datos.sh subir
+
+      - name: Respaldo y logs (30 días)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: radar-${{ github.run_number }}
+          path: |
+            logs/
+            data/radar_subir.db
+          retention-days: 30
+          if-no-files-found: warn
+
+      - name: ¿Hay panel para publicar?
+        id: panel
+        if: always()
+        run: |
+          if [ -s panel/data.js ] && [ -s panel/index.html ]; then echo "listo=si" >> "$GITHUB_OUTPUT"; else echo "listo=no" >> "$GITHUB_OUTPUT"; fi
+
+      - name: Preparar panel para GitHub Pages
+        if: always() && steps.panel.outputs.listo == 'si'
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: panel
+
+      - name: Resultado final
+        if: always()
+        run: |
+          echo "corrida diaria: ${{ steps.diario.outcome }} · salud: ${{ steps.salud.outcome }}"
+          if [ "${{ steps.diario.outcome }}" != "success" ] || [ "${{ steps.salud.outcome }}" != "success" ]; then
+            echo "::error::La corrida o el chequeo de salud fallaron: revisa los pasos de arriba y el log en los artefactos."
+            exit 1
+          fi
+
+  publicar:
+    needs: radar
+    if: always() && needs.radar.outputs.panel == 'si'
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    steps:
+      - name: Publicar panel
+        id: deploy
+        uses: actions/deploy-pages@v4
